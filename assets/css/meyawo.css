@@ -12152,7 +12152,7 @@ pre .code {
 @media (max-width: 991.98px) {
   .header {
     background-size: cover;
-    min-height: 600px;
+    min-height: 300px;
   }
   .header-content {
     padding-left: calc(100% / 5) !important;
