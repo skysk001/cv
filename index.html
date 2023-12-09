@@ -164,11 +164,44 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="service-card">
                         <div class="body">
-                            <img src="assets/imgs/mysql.svg"
+                            <img src="assets/imgs/js.png"
                                 alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
                                 class="icon">
-                            <h6 class="title">MySQL</h6>
-                            <p class="subtitle">Adept at database design, optimization, and query implementation for robust and efficient data management in web development projects.</p>
+                            <h6 class="title">JavaScript</h6>
+                            <p class="subtitle">JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/html.png"
+                                alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
+                                class="icon">
+                            <h6 class="title">HTML</h6>
+                            <p class="subtitle">The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/css.png"
+                                alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
+                                class="icon">
+                            <h6 class="title">CSS</h6>
+                            <p class="subtitle">CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/bootstrap.png"
+                                alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
+                                class="icon">
+                            <h6 class="title">Bootstrap</h6>
+                            <p class="subtitle">Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development.</p>
                         </div>
                     </div>
                 </div>
@@ -271,7 +304,7 @@
                     <p class="m-0 text-light">Always feel Free to Contact & Hire me</p>
                 </div>
                 <div class="col-sm offset-sm-2 offset-md-3">
-                    <button class="btn btn-lg my-font btn-light rounded">Hire Me</button>
+                    <a  href="tel:7275537561" class="btn btn-lg my-font btn-light rounded">Hire Me</a>
                 </div>
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -350,17 +383,20 @@
             <form action="" class="contact-form col-md-10 col-lg-8 m-auto">
                 <div class="form-row">
                     <div class="form-group col-sm-6">
-                        <input type="text" size="50" class="form-control" placeholder="Your Name" required>
+                        <input type="text" id="name" size="50" class="form-control" placeholder="Your Name" required>
                     </div>
                     <div class="form-group col-sm-6">
-                        <input type="email" class="form-control" placeholder="Enter Email" requried>
+                        <input type="text" id="phone" size="50" class="form-control" placeholder="Contact No." required>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <input type="email" id="email" class="form-control" placeholder="Enter Email" requried>
                     </div>
                     <div class="form-group col-sm-12">
                         <textarea name="comment" id="comment" rows="6" class="form-control"
                             placeholder="Write Something"></textarea>
                     </div>
                     <div class="form-group col-sm-12 mt-3">
-                        <input type="submit" value="Send Message" class="btn btn-outline-primary rounded">
+                        <input type="button" value="Send Message" class="btn btn-outline-primary rounded" onclick="sendEmail()">
                     </div>
                 </div>
             </form><!-- end of contact form -->
@@ -385,7 +421,28 @@
             </div>
         </footer>
     </div> <!-- end of page footer -->
-
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+	<script type="text/javascript">
+		function sendEmail() {
+            var user_name = document.getElementById("name").value;
+            var user_email = document.getElementById("email").value;
+            var connect = document.getElementById("phone").value;
+            var user_message = document.getElementById("comment").value;
+            alert(user_email);
+			Email.send({
+				Host: "smtp.gmail.com",
+				Username: "yadavsujeet391@gmail.com",
+				Password: "xayg tkno kphw ztyw",
+				To: "zsprograming1@gmail.com",
+				From: "yadavsujeet391@gmail.com",
+				Subject: "Sending Email using javascript",
+                Body: "Name: " + user_name + "<br>Email: " + user_email + "<br>Phone: " + connect + "<br>Message: " + user_message,
+			})
+				.then(function (message) {
+					alert("mail sent successfully")
+				});
+		}
+	</script>
     <!-- core  -->
     <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
     <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
@@ -395,7 +452,7 @@
 
     <!-- Meyawo js -->
     <script src="assets/js/meyawo.js"></script>
-
+    
 </body>
 
 </html>
